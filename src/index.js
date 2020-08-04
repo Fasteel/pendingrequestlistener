@@ -23,11 +23,7 @@ class Network {
   refreshPendingStateDisplay() {
     setInterval(() => {
       const displayTitle = document.querySelector(".display-2");
-      if (this.havePendingRequests) {
-        displayTitle.style = "color: orange";
-      } else {
-        displayTitle.style = "color: green";
-      }
+      displayTitle.style = `color: ${this.havePendingRequests ? 'orange' : 'green'}`;
     }, 500);
   }
 
@@ -74,7 +70,7 @@ class Network {
   }
 
   makeALotOfRequest() {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 14; i++) {
       setTimeout(() => {
         this.doRequest();
       }, getRandomVal());
